@@ -15,12 +15,12 @@ var express = require('express')
 
 var app = express();
 
-app.locals.title = "Alex's Awesome Gallery";
+app.locals.title = "Brian's Awesome Gallery";
 
 app.configure(function(){
-  app.set('port', process.env.PORT || 3000);
+  app.set('port', process.env.PORT || 3001);
   app.set('views', __dirname + '/views');
-  app.set('view engine', 'jade');
+  app.set('view engine', 'ejs');
   app.use(express.favicon());
   app.use(express.logger('dev'));
   app.use(express.bodyParser());
@@ -31,7 +31,7 @@ app.configure(function(){
 
 app.configure('development', function(){
   app.use(express.errorHandler());
-  cloudinary.config({ cloud_name: 'YOURS', api_key: 'YOURS', api_secret: 'YOURS' });
+  cloudinary.config({ cloud_name: 'by', api_key: '123982555558898', api_secret: '_9K43LzR5DLC1w5yKHC5L0uVyBI' });
 });
 
 app.locals.api_key = cloudinary.config().api_key;
